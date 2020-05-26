@@ -79,7 +79,7 @@ $font-smoothing:                antialiased;
 $header-font-family:            stencilFontFamily("headings-font"), Arial, Helvetica, sans-serif;
 $header-font-weight:            stencilFontWeight("headings-font");
 $header-font-style:             null;
-$header-font-color:             stencilColor("color-textHeading");
+$header-font-color:             stencilColor("navUser-color");
 $header-line-height:            null;
 $header-top-margin:             spacing("double");
 $header-bottom-margin:          spacing("half");

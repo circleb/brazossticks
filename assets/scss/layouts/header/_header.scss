@@ -20,11 +20,12 @@
     border-bottom: container("border");
     position: fixed;
     top: 0;
+	left: 0;
     width: 100%;
     z-index: zIndex("higher");
 
     @include breakpoint("medium") {
-        border-bottom: container("border");
+        border-bottom: none;
         overflow: visible;
         position: relative;
     }
@@ -38,6 +39,16 @@
     }
 }
 
+body.pageshome .header {
+    @include breakpoint("medium") {
+		background: none;
+	}
+}
+body.pageshome .body {
+    @include breakpoint("medium") {
+		margin-top: -130px;
+	}
+}
 .header-logo {
     font-size: 0;   // 1
     margin: 0 remCalc($header-toggle-width); // 2
@@ -49,17 +60,10 @@
     }
 
     @include breakpoint("medium") {
-        margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
+		width: 25%;
+		margin: 15px 0;
         padding: 0;
-
-        .header.fixed & {
-            background-color: color("greys", "lightest");
-            margin: 0;
-            padding: spacing("quarter") 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-        }
+		float: left;
     }
 
     > a {
@@ -76,7 +80,7 @@
         @include breakpoint("medium") {
             background: none;
             border-bottom: 0;
-            display: inline;
+            display: block;
             padding: 0;
             width: 100%;
         }
