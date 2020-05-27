@@ -1,9 +1,28 @@
+{{!-- BEGIN CUSTOMILY --}}
+<style type="text/css">
+    .cl-thumb~img{
+        display: none!important;
+    }
+</style>
+{{!-- END CUSTOMILY --}}  
 <div class="previewCart">
     {{#if cart.items.length}}
         <ul class="previewCartList">
             {{#each (limit cart.items 4)}}
                 <li class="previewCartItem">
                     <div class="previewCartItem-image">
+                        {{!-- BEGIN CUSTOMILY --}}
+                            {{#if options}}
+                                {{#each options}}
+                                    {{#if name '==' 'cl-thumb' }}
+                                        <img class="cl-thumb" src="{{value}}" alt="{{image.alt}}" title="{{image.alt}}">
+                                    {{/if}}
+                                    {{#if name '==' 'view your personalization' }}
+                                        <img class="cl-thumb" src="{{value}}" alt="{{image.alt}}" title="{{image.alt}}">
+                                    {{/if}}
+                                {{/each}}
+                            {{/if}}
+                        {{!-- END CUSTOMILY --}}   
                         {{#if type '==' 'GiftCertificate'}}
                             <img src="{{cdn ../../theme_settings.default_image_gift_certificate}}" alt="GiftCertificate" title="GiftCertificate">
                         {{else}}
