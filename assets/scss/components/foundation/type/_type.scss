@@ -17,12 +17,9 @@ h3,
 h4,
 h5,
 h6 {
+	color: stencilColor('color-textBase');
     font-weight: $header-font-weight;
     margin-top: $heading-marginTop;
-}
-
-h5,
-h6 {
     text-transform: $heading-textTransform;
 }
 

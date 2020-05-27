@@ -174,8 +174,11 @@
 
 .form-field-group {
     border: $input-border-width $input-border-style $input-border-color;
-    border-radius: $input-border-radius;
     padding: spacing("single");
+}
+.footer-subscribe .form-input, .footer-subscribe .button {
+	margin-left: 1px;
+	border: none;
 }
 
 // This component should live inside a .form-row
@@ -197,6 +200,7 @@
     .button {
         display: block;
         width: 100%;
+		border-radius: 0;
     }
 
     .form-input {

@@ -5,6 +5,7 @@
 .button {
     line-height: 1rem;
     transition: all 0.15s ease;
+	border-radius: 0;
 
     + .button {
         margin-left: 0;
@@ -15,6 +16,15 @@
     }
 }
 
+.button--tertiary {
+	color: stencilColor("button--primary-color");
+	background-color: stencilColor("button--primary-backgroundColorHover");
+	
+	&:hover {
+		background-color: stencilColor("button--primary-color");
+	}
+}
+
 .button[disabled] {
     cursor: not-allowed;
 }
@@ -22,6 +32,6 @@
 .button--icon {
 
     svg {
-        fill: stencilColor("button--icon-svg-color");
+        fill: stencilColor("button--default-color");
     }
 }

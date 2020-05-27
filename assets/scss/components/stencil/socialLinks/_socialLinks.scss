@@ -69,7 +69,11 @@
 
 .socialLinks--alt {
     .icon {
-        @include square($socialLinks-alt-iconSize);
+		@include square($socialLinks-iconMobileSize);
+
+		@include breakpoint("medium") {
+			@include square($socialLinks-alt-iconSize);
+		}
     }
 
     svg {

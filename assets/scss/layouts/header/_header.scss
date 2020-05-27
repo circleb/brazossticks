@@ -39,14 +39,42 @@
     }
 }
 
-body.pageshome .header {
+body.pagehome .header {
     @include breakpoint("medium") {
 		background: none;
 	}
 }
-body.pageshome .body {
+body.pagehome .body {
     @include breakpoint("medium") {
 		margin-top: -130px;
+	}
+}
+.nav-hours {
+	display: none;
+	float: left;
+	color: stencilColor("color-textSecondary");
+	font-size: fontSize("smaller");
+	font-weight: 600;
+	margin-bottom: 0;
+	padding: 1rem 0;
+	text-transform: uppercase;
+
+    @include breakpoint("medium") {
+		display: block;
+	}
+
+	small {
+		font-size: fontSize("smallest");
+	}
+
+	strong {
+		font-weight: 900;
+	}
+
+	img {
+		margin-left: 4rem;
+		max-height: 0.9rem;
+		vertical-align: baseline;
 	}
 }
 .header-logo {

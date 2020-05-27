@@ -1,6 +1,6 @@
 <p>Sign-up for our mailing list and <strong>get 10% off</strong> of your first order!</p>
 
-<form class="form" action="{{urls.subscribe.action}}" method="post">
+<form class="form footer-subscribe" action="{{urls.subscribe.action}}" method="post">
     <fieldset class="form-fieldset">
         <input type="hidden" name="action" value="subscribe">
         <input type="hidden" name="nl_first_name" value="bc">
@@ -9,7 +9,7 @@
             <label class="form-label is-srOnly" for="nl_email">{{lang 'common.email_address'}}</label>
             <div class="form-prefixPostfix wrap">
                 <input class="form-input" id="nl_email" name="nl_email" type="email" value="{{customer.email}}" placeholder="{{lang 'newsletter.email_placeholder'}}">
-                <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="{{lang 'newsletter.subscribe_submit'}}">
+                <input class="button button--tertiary form-prefixPostfix-button--postfix" type="submit" value="{{lang 'newsletter.subscribe_submit'}}">
             </div>
             {{#if settings.show_newsletter_summary }}
                 <div class="footer-newsletter-summary">{{settings.newsletter_summary}}</div>

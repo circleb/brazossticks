@@ -31,16 +31,27 @@
 		<div class="container">
 			<article class="footer-info-col footer-info-col--medium" data-section-type="footer-webPages">
 				<h5 class="footer-info-heading">{{lang 'footer.navigate'}}</h5>
-				<ul class="footer-info-list">
-					{{#each pages}}
-						<li>
-							<a href="{{url}}">{{name}}</a>
-						</li>
-					{{/each}}
-					<li>
-						<a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
-					</li>
-				</ul>
+                <ul class="footer-info-list">
+                    <li><a href="http://www.brazos-walking-sticks.com/shipping-policy/">Shipping</a></li>
+                    <li><a href="http://www.brazos-walking-sticks.com/return-policy/">Returns</a></li>
+                    <li><a href="http://www.brazos-walking-sticks.com/account.php">My Account</a></li>
+                    <li><a href="http://www.brazos-walking-sticks.com/cart.php">View Cart</a></li>
+                    <li><a href="http://www.brazos-walking-sticks.com/wishlist.php">Wish List</a></li>
+                    <li><a href="http://www.brazos-walking-sticks.com/login.php">Open an Account</a></li>
+                    <li><a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a></li>
+                </ul>
+			</article>
+
+			<article class="footer-info-col footer-info-col--medium" data-section-type="footer-brands">
+                <h5 class="footer-info-heading">{{lang 'footer.info'}}</h5>
+                <ul class="footer-info-list">
+                    <li><a href="http://www.brazos-walking-sticks.com/about-us/">About Us</a></li>
+                    <li><a href="http://www.brazos-walking-sticks.com/contact-us/">Contact Us</a></li>
+                    <li><a href="http://www.brazos-walking-sticks.com/testimonies/">Testimonials</a></li>
+                    <li><a href="http://blog.brazos-walking-sticks.com/">Blog</a></li>
+                    <li><a href="http://www.brazos-walking-sticks.com/terms-conditions/">Terms & Conditions</a></li>
+                    <li><a href="http://www.brazos-walking-sticks.com/privacy-policy/">Privacy Policy</a></li>
+                </ul>
 			</article>
 
 			<article class="footer-info-col footer-info-col--medium" data-section-type="footer-categories">
@@ -51,30 +62,22 @@
 							<a href="{{url}}">{{name}}</a>
 						</li>
 					{{/each}}
+                    {{#if settings.gift_certificates_enabled}}
+                        <li>
+                            <a href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
+                        </li>
+                    {{/if}}
 				</ul>
+                <a href="/register" class="button button--primary button--large">Register Your Product</a>
 			</article>
-
-			{{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
-			<article class="footer-info-col footer-info-col--medium" data-section-type="footer-brands">
-				<h5 class="footer-info-heading">{{lang 'footer.brands'}}</h5>
-				<ul class="footer-info-list">
-					{{#each shop_by_brand}}
-						<li>
-							<a href="{{url}}">{{name}}</a>
-						</li>
-					{{/each}}
-					<li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
-				</ul>
-			</article>
-			{{/and}}
 
 			{{#if settings.address}}
 			<article class="footer-info-col footer-info-col--medium" data-section-type="storeInfo">
-				<h5 class="footer-info-heading">{{lang 'footer.info'}}</h5>
-				<address>{{nl2br settings.address}}</address>
-				{{#if settings.phone_number}}
-					<strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>
-				{{/if}}
+                <h5 class="footer-info-heading">Contact Us</h5>
+                {{> components/common/store-logo}}
+                <h3>(800) 581-4352</h3>
+                <p>M-F 9am - 5pm. CST<br/>
+                6408 Gholson Rd.  •  Waco, TX 76705</p>
 				{{#if theme_settings.geotrust_ssl_common_name}}
 					{{> components/common/geotrust-ssl-seal}}
 				{{/if}}
@@ -92,10 +95,10 @@
 			<article class="footer-info-col footer-info-col--medium">
 				<p>Proudly Made in the USA</p>
 			</article>
-			<article class="footer-info-col footer-info-col--medium">
+			<article class="footer-info-col footer-info-col--medium footer-payment">
 				{{> components/common/payment-icons}}
 			</article>
-			<article class="footer-info-col footer-info-col--medium">
+			<article class="footer-info-col footer-info-col--medium footer-social">
 				{{> components/common/social-links}}
 			</article>
 		</div>
