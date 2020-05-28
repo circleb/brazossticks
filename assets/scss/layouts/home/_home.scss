@@ -1,0 +1,145 @@
+// =============================================================================
+// HEADER (CSS)
+//
+// 1. Style custom Rows and Cols
+//
+// -----------------------------------------------------------------------------
+
+body.pagehome .body > .container {
+	max-width: 100%;
+	padding: 0;
+}
+.container--top {
+	font-size: 0;
+}
+
+.home-row {
+	font-size: 0;
+    vertical-align: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    > img {
+    	width: 100%;
+    }
+
+    .button {
+    	color: stencilColor('color-textBase');
+    }
+}
+
+.home-row--ourproducts {
+	background-size: 0 0;
+    background-position: left 100% bottom;
+
+    @include breakpoint("small") {
+	    background-size: contain;
+	    background-position: left bottom;
+    }
+
+    @include breakpoint("medium") {
+	    background-position: right 70% bottom;
+    }
+}
+
+.home-row--whitetext {
+	.home-title {
+		color: #ffffff;
+
+		&:after {
+			border-bottom-color: #ffffff;
+		}
+	}
+
+	p {
+		color: #ffffff;
+		font-weight: 600;
+	}
+	.button {
+		color: #ffffff;
+
+		&:hover {
+			color: #ffffff;
+			border-color: #ffffff;
+		}
+	}
+}
+
+.home-col-small {
+    @include grid-column(6);
+    display: inline-block;
+    float: none;
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    @include breakpoint("medium") {
+        width: width("3/12");
+    }
+}
+
+.home-col-half {
+    @include grid-column(12);
+    display: inline-block;
+    float: none;
+    font-size: fontSize("base"); // 2
+    margin: spacing("double") + spacing("double") 0;
+
+    @include breakpoint("small") {
+        width: width("6/12");
+    }
+
+    > :first-child {
+        margin-top: 0;
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.home-col-full {
+    @include grid-column(12);
+    display: inline-block;
+    float: none;
+    font-size: fontSize("base"); // 2
+    margin: spacing("double") + spacing("double") 0;
+    text-align: center;
+
+    @include breakpoint("medium") {
+    	h1, h2, h3, p {
+    		max-width: 60%;
+    		margin-left: auto;
+    		margin-right: auto;
+    	}
+    }
+}
+
+.home-col-half--right {
+    @include breakpoint("small") {
+		margin-left: 50%;
+	}
+}
+
+.home-title {
+	position: relative;
+	text-align: center;
+	font-size: fontSize("largest");
+	margin-bottom: 2rem;
+
+	&:after {
+		width: 7rem;
+		border-bottom: solid 5px stencilColor('color-textBase');
+		content: '';
+		position: absolute;
+		bottom: -0.5rem;
+		left: 50%;
+		margin-left: -3.5rem;
+	}
+}
+
+.inset-flag {
+	float: left;
+	margin-right: 0.5rem;
+	max-height: 3rem;
+}
