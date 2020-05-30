@@ -1,24 +1,25 @@
 <section class="productCarousel"
     data-list-name="{{list}}"
     data-slick='{
-        "dots": true,
+        "dots": false,
         "infinite": false,
         "mobileFirst": true,
-        "slidesToShow": 2,
-        "slidesToScroll": 2,
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
         "responsive": [
             {
                 "breakpoint": 800,
                 "settings": {
                     "slidesToShow": {{ columns }},
-                    "slidesToScroll": 3
+                    "slidesToScroll": 3,
+                    "dots": true
                 }
             },
             {
                 "breakpoint": 550,
                 "settings": {
-                    "slidesToShow": 3,
-                    "slidesToScroll": 3
+                    "slidesToShow": 2,
+                    "slidesToScroll": 2
                 }
             }
         ]

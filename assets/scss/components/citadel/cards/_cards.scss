@@ -27,7 +27,15 @@
 .card-img-container {
     max-width: get-width(stencilString('productgallery_size'));
 
-    @include lazy-loaded-padding('productgallery_size');
+    &:after {
+        content: '';
+        display: block;
+        height: 0;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    // @include lazy-loaded-padding('productgallery_size');
 }
 
 .card-figcaption {
@@ -82,13 +90,12 @@
 }
 
 .card-figcaption-button {
-    border: $card-figcaption-button-border;
     display: $card-figcaption-button-display;
     margin: $card-figcaption-button-margin;
 
-    &:active {
-        background-color: $card-figcaption-button-backgroundHover;
-        border: $card-figcaption-button-border;
+    &:active, &:hover {
+        color: stencilColor('color-primaryDark');
+        background-color: stencilColor('color-secondaryDark');
     }
 
     + .card-figcaption-button {

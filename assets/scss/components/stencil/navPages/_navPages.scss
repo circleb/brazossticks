@@ -74,7 +74,6 @@
     padding: spacing("single");
 
     @include breakpoint("medium") {
-        @include grid-row(); // 1
         @include nav($style: "navBar", $wrapper: "nav");
         background: none;
         font-size: 0; // 1
@@ -197,8 +196,7 @@
 
     @include breakpoint("medium") {
         display: inline-block;
-//        padding: spacing("half") (spacing("half") + spacing("quarter")) (spacing("half") + spacing("quarter"));
-		padding: 50px (spacing("half") + spacing("quarter"));
+		padding: 50px spacing("half");
 
         &.is-open {
             background-color: stencilColor("navPages-subMenu-backgroundColor");
@@ -209,6 +207,10 @@
                 stroke: stencilColor("navPages-color-hover");
             }
         }
+    }
+
+    @include breakpoint("large") {
+        padding: 50px (spacing("half") + spacing("quarter"));
     }
 
     &:hover, &.activePage {

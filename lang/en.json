@@ -486,7 +486,7 @@
                     "rss_atom": "Latest {limit} Popular Products (Atom)"
                 },
                 "featured": {
-                    "heading": "Featured Products",
+                    "heading": "Our Strongest Sticks and Canes",
                     "intro": "The featured products feed contains the latest {limit} featured products on {store}.",
                     "rss": "Latest {limit} Featured Products (RSS)",
                     "rss_atom": "Latest {limit} Featured Products (Atom)"
@@ -684,7 +684,7 @@
         "related_products": "Related Products",
         "top": "Most Popular Products",
         "similar_by_views": "Customers Also Viewed",
-        "featured": "Featured Products",
+        "featured": "Our Strongest Sticks and Canes",
         "file_option_set": "Currently: <a href=\"{url}\" target=\"_blank\">{name}</a>",
         "new": "New Products",
         "warranty": "Warranty Information",
@@ -733,7 +733,7 @@
         "shipping_calculated": "Calculated at Checkout",
         "sold_out": "Sold Out",
         "pre_order": "Pre-Order Now",
-        "choose_options": "Choose Options",
+        "choose_options": "Customize",
         "quick_view": "Quick view",
         "compare": "Compare",
         "max_filesize": "Maximum file size is",

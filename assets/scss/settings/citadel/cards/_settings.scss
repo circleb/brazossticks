@@ -21,10 +21,6 @@ $card-figcaption-textAlign:                 center;
 $card-figcaption-body-paddingHorizontal:    null;
 $card-figcaption-title-color:               null;
 $card-figcaption-title-marginBottom:        null;
-$card-figcaption-button-background:         rgba(stencilColor("card-figcaption-button-background"), 0.9);
-$card-figcaption-button-backgroundHover:    stencilColor("card-figcaption-button-background");
-$card-figcaption-button-borderColor:        null;
-$card-figcaption-button-color:              stencilColor("card-figcaption-button-color");
 
 $card-text-color:                           stencilColor("color-textSecondary");
 
@@ -68,7 +64,5 @@ $card-title-textDecoration:                 none;
 
 $card-text-marginBottom:                    spacing("eighth");
 
-$card-figcaption-button-border:             none;
 $card-figcaption-button-display:            block;
-$card-figcaption-button-margin:             0;
 $card-figcaption-button-margin:             spacing("quarter") 0 0;

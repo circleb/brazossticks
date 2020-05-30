@@ -50,24 +50,10 @@ blog:
             </div>
         </div>
     </div>
-    <div class="container">
-        {{#if products.featured}}
-            {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-        {{/if}}
-        {{{region name="home_below_featured_products"}}}
-
-        {{#if products.top_sellers}}
-            {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
-        {{/if}}
-        {{{region name="home_below_top_products"}}}
-    </div>
-    <div class="home-row home-row--funnel">
-        <img src="{{getImage image 'productgallery_size' (cdn theme_settings.home_funnel)}}" />
-    </div>
     <div class="home-row home-row--legacy home-row--whitetext" style="background-image: url({{getImage image 'productgallery_size' (cdn theme_settings.home_legacy)}})">
         <div class="container">
             <div class="home-col-full">
-                <h2 class="home-title home-title--white">Preserve a <strong>Legacy</strong></h2>
+                <h2 class="home-title">Preserve a <strong>Legacy</strong></h2>
                 <p class="text-white">
                     Inspired by our military, police, firefighters, EMTs and others who have honored their country and their communities by dedicating their lives to serving others. These staffs make a perfect gift for veterans. Each staff or cane is made from premium lumber. then you get to customize what medallion and the customize the engraving on the side.
                 </p>
@@ -78,10 +64,27 @@ blog:
     <div class="home-row home-row--reviews">
         <div class="container">
             <div class="home-col-full">
-                <h2 class="home-title home-title--white">What <strong>Customers</strong> Say</h2>
+                <h2 class="home-title">What <strong>Customers Say</strong></h2>
                 <img src="{{getImage image 'productgallery_size' (cdn theme_settings.home_reviews)}}" />
             </div>
         </div>
+    </div>
+    <div class="home-row home-row--funnel">
+        <img src="{{getImage image 'productgallery_size' (cdn theme_settings.home_funnel)}}" />
+    </div>
+    <div class="product-slider product-slider--dark">
+        <div class="container">
+            {{#if products.featured}}
+                {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+            {{/if}}
+            {{{region name="home_below_featured_products"}}}
+        </div>
+    </div>
+    <div class="container product-slider">
+        {{#if products.top_sellers}}
+            {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+        {{/if}}
+        {{{region name="home_below_top_products"}}}
     </div>
 </div>
 {{/partial}}

@@ -103,7 +103,8 @@
     input,
     a {
         vertical-align: top;
-        width: 100%;
+        // width: 100%;
+        width: auto;
 
         @include breakpoint("small") {
             margin-bottom: 0;

@@ -39,16 +39,6 @@
     }
 }
 
-body.pagehome .header {
-    @include breakpoint("medium") {
-		background: none;
-	}
-}
-body.pagehome .body {
-    @include breakpoint("medium") {
-		margin-top: -130px;
-	}
-}
 .nav-hours {
 	display: none;
 	float: left;
@@ -77,6 +67,7 @@ body.pagehome .body {
 		vertical-align: baseline;
 	}
 }
+
 .header-logo {
     font-size: 0;   // 1
     margin: 0 remCalc($header-toggle-width); // 2
@@ -88,7 +79,7 @@ body.pagehome .body {
     }
 
     @include breakpoint("medium") {
-		width: 25%;
+        width: 11rem;
 		margin: 15px 0;
         padding: 0;
 		float: left;

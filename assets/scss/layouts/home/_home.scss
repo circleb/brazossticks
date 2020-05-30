@@ -1,9 +1,26 @@
 // =============================================================================
-// HEADER (CSS)
+// Home (CSS)
 //
-// 1. Style custom Rows and Cols
+// 1. adjust overlap of navigation
+//
+// 2. Style Custom Rows and Cols
 //
 // -----------------------------------------------------------------------------
+
+
+body.pagehome .header {
+    @include breakpoint("medium") {
+        background: none;
+    }
+}
+
+body.pagehome .body {
+    @include breakpoint("medium") {
+        position: relative;
+        top: -130px; // negative top margin breakes the slick slider in some browsers
+        margin-bottom: -130px; // this compensates for the top offset
+    }
+}
 
 body.pagehome .body > .container {
 	max-width: 100%;
@@ -126,6 +143,7 @@ body.pagehome .body > .container {
 	text-align: center;
 	font-size: fontSize("largest");
 	margin-bottom: 2rem;
+    font-weight: 600;
 
 	&:after {
 		width: 7rem;
@@ -136,10 +154,31 @@ body.pagehome .body > .container {
 		left: 50%;
 		margin-left: -3.5rem;
 	}
+
+    strong {
+        font-weight: 900;
+    }
+
 }
 
 .inset-flag {
 	float: left;
 	margin-right: 0.5rem;
 	max-height: 3rem;
+}
+
+.product-slider {
+    h1, h2, h3, h4, h5 {
+        font-weight: 600;
+    }
+}
+
+.product-slider--dark {
+    padding-top: spacing("double");
+    padding-bottom: spacing("double");
+    background-color: stencilColor('color-greyDarker');
+
+    h1, h2, h3, h4, h5, p, a {
+        color: stencilColor('color-white');
+    }
 }
