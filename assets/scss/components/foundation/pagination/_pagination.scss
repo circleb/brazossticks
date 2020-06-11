@@ -20,6 +20,10 @@
 
     .pagination-item { // 2
         display: inline-block;
+
+        a {
+            color: $pagination-item-previousNext-color;
+        }
     }
 }
 

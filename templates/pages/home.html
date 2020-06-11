@@ -65,12 +65,11 @@ blog:
         <div class="container">
             <div class="home-col-full">
                 <h2 class="home-title">What <strong>Customers Say</strong></h2>
-                <img src="{{getImage image 'productgallery_size' (cdn theme_settings.home_reviews)}}" />
             </div>
         </div>
     </div>
-    <div class="home-row home-row--funnel">
-        <img src="{{getImage image 'productgallery_size' (cdn theme_settings.home_funnel)}}" />
+    <div class="home-row home-row--funnel hide-element">
+        <img src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.home_funnel)}}" />
     </div>
     <div class="product-slider product-slider--dark">
         <div class="container">

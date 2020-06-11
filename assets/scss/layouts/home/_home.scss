@@ -168,14 +168,15 @@ body.pagehome .body > .container {
 }
 
 .product-slider {
+    padding-top: spacing("double");
+    padding-bottom: spacing("double");
+
     h1, h2, h3, h4, h5 {
         font-weight: 600;
     }
 }
 
 .product-slider--dark {
-    padding-top: spacing("double");
-    padding-bottom: spacing("double");
     background-color: stencilColor('color-greyDarker');
 
     h1, h2, h3, h4, h5, p, a {
