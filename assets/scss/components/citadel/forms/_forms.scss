@@ -269,23 +269,23 @@
 //
 
 .form-option {
-    border: 1px solid stencilColor("input-border-color");
     color: stencilColor("form-label-font-color");
     cursor: pointer;
     display: inline-block;
-    font-size: 0; // 2
+    font-size: 0;
+    font-weight: 600;
     margin-bottom: spacing("third");
     margin-right: spacing("third");
     padding: 1px;
     transition: all 0.15s ease;
 
     &:hover {
-        border-color: stencilColor("input-border-color-active");
+        background-color: stencilColor("input-bg-color-active");
     }
 
     .form-radio:checked + & {
-        border-color: stencilColor("checkRadio-color");
-        box-shadow: 0 0 0 1px stencilColor("checkRadio-color");
+        background-color: stencilColor("checkRadio-color");
+        color: #ffffff;
     }
 }
 

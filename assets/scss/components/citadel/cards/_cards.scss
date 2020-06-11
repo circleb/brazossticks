@@ -92,6 +92,7 @@
 .card-figcaption-button {
     display: $card-figcaption-button-display;
     margin: $card-figcaption-button-margin;
+    background-color: rgba(stencilColor('color-primary'), .5);
 
     &:active, &:hover {
         color: stencilColor('color-primaryDark');
