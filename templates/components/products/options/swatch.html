@@ -13,6 +13,7 @@
         <label class="form-option form-option-swatch" for="attribute_swatch_{{../id}}_{{id}}" data-product-attribute-value="{{id}}">
             {{#if image}}
                 <span class='form-option-variant form-option-variant--pattern' title="{{this.label}}" style="background-image: url('{{getImage image "swatch_option_size"}}');"></span>
+                <span class='form-option-variant--title'>{{this.label}}</span>
             {{/if}}
             {{#if data.[2]}}
                 <span class='form-option-variant form-option-variant--color' title="{{this.label}}" style="background-color: #{{data.[0]}}"></span>
@@ -27,11 +28,6 @@
                         <span class='form-option-variant form-option-variant--color' title="{{this.label}}" style="background-color: #{{data.[0]}}"></span>
                     {{/if}}
                 {{/if}}
-            {{/if}}
-            {{#if pattern}}
-                <span class="form-option-expanded">
-                    <span class="form-option-image" style="background-image: url('{{getImage image 'core-swatch'}}');"></span>
-                </span>
             {{/if}}
         </label>
     {{/each}}

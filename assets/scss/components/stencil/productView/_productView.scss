@@ -42,7 +42,6 @@
 .productView-img-container {
     position: relative;
     margin: auto;
-    max-width: get-width(stencilString('product_size'));
     width: 100%;
 
     img {
@@ -90,9 +89,8 @@
 
 .productView-thumbnail {
     @include grid-column(3);
+    padding-left: 0;
     padding-left: spacing("quarter");
-    padding-right: spacing("quarter");
-    text-align: center;
 
     @include breakpoint("large") {
         width: 20%;
@@ -100,7 +98,6 @@
 }
 
 .productView-thumbnail-link {
-    border: container("border");
     display: inline-flex;
     height: 67px;
     max-width: 75px;
@@ -112,7 +109,7 @@
 
     &:hover,
     &.is-active {
-        border-color: color("greys", "darker");
+        background-color: color("greys", "lighter");
     }
 }
 
@@ -122,6 +119,10 @@
 
 .productView-details {
     margin-bottom: spacing("single") + spacing("third");
+
+    @include breakpoint("medium") {
+        margin-bottom: 0;
+    }
 }
 
 
@@ -130,7 +131,6 @@
 
 .productView-product {
     @include breakpoint("medium") {
-        border-bottom: container("border");
         padding-bottom: spacing("single") + spacing("third");
     }
 
@@ -140,7 +140,7 @@
 }
 
 .productView-title {
-    font-size: fontSize("small");
+    font-size: fontSize("large");
     margin: -(spacing("half")) 0 spacing("quarter");
 
     @include breakpoint("medium") {
@@ -176,11 +176,10 @@
 // -----------------------------------------------------------------------------
 
 .productView-price {
-    font-size: fontSize("smaller");
+    font-size: fontSize("larger");
     margin-bottom: spacing("third");
 
     @include breakpoint("medium") {
-        font-size: fontSize("larger");
         margin-bottom: spacing("base");
     }
 
@@ -211,7 +210,7 @@
     }
 
     > a {
-        color: stencilColor("color-textSecondary");
+        color: stencilColor("color-textPrimary");
 
         // scss-lint:disable NestingDepth
         &:hover {
@@ -246,22 +245,17 @@
 
 .productView-info-name,
 .productView-info-value {
-    float: left;
-
-    @include breakpoint("small") {
-        float: none;
-    }
+    display: inline
 }
 
 .productView-info-name {
-    clear: both;
     margin-bottom: spacing("eighth");
     margin-right: spacing("quarter");
+    font-weight: fontWeight("bold");
 
     @include breakpoint("small") {
         font-family: fontFamily("headingSans");
         font-size: fontSize("smallest");
-        font-weight: fontWeight("normal");
     }
 }
 
@@ -270,6 +264,11 @@
 
     @include breakpoint("small") {
         margin-bottom: spacing("base");
+    }
+
+    &:after {
+        content: '';
+        display: block;
     }
 }
 
@@ -284,13 +283,10 @@
 // -----------------------------------------------------------------------------
 
 .productView-options {
+    counter-reset: option-counter;
     @include clearfix;
     margin-bottom: spacing("single");
-    text-align: center;
-
-    @include breakpoint("small") {
-        text-align: left;
-    }
+    padding-left: 4rem;
 
     .form-input[type="number"] {
         @include breakpoint("small") {
@@ -309,6 +305,7 @@
     .form-field {
         font-size: 0; // 2
         margin-bottom: 2rem;
+        position: relative;
 
         // scss-lint:disable SelectorDepth, NestingDepth
         > .form-checkbox + .form-label
@@ -331,10 +328,41 @@
         > .form-label:nth-of-type(2) {
             margin-left: 0;
         }
+
+        .form-label {
+            font-weight: 600;
+
+            small {
+                color: stencilColor('color-textBase');
+            }
+        }
+    }
+
+    .productView-optionList {
+        .form-field {
+            // &:before {
+            //     counter-increment: option-counter;
+            //     content: counter(option-counter);
+            //     font-size: fontSize("larger");
+            //     font-weight: 600;
+            //     overflow: hidden;
+            //     height: 3rem;
+            //     width: 3rem;
+            //     border: 1px solid color("greys", "light");
+            //     border-radius: 50%;
+            //     position: absolute;
+            //     top: 1.6rem;
+            //     left: -4rem;
+            //     color: stencilColor('color-textBase');
+            //     display: inline-flex;
+            //     text-align: center;
+            //     justify-content: center;
+            //     vertical-align: middle;
+            // }
+        }
     }
 
     .form-action {
-
         @include breakpoint("small") {
             float: left;
             padding: 0 remCalc(10);
@@ -383,7 +411,7 @@
 
     .form-label {
         text-align: left;
-        top: -2px; // 1
+        top: -2px;
     }
 }
 
