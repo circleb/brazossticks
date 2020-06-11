@@ -6,39 +6,38 @@
 // Blog post
 // -----------------------------------------------------------------------------
 
+
+.blog-post-container {
+    @include grid-row();
+    margin-bottom: spacing("double");
+}
+
 .blog {
     margin-bottom: spacing("single");
+    @include grid-column(12);
 
-    @include breakpoint("medium") {
-        margin: auto;
-        width: 100%;
+    @include breakpoint("small") {
+        @include grid-column(6);
     }
 
-    + .blog {
-        border-top: container("border");
-        margin-top: spacing("double");
-        padding-top: spacing("double");
+    @include breakpoint("medium") {
+        @include grid-column(4);
     }
 
     .tags {
-        margin-top: spacing("double");
-        text-align: center;
-    }
-
-    .socialLinks {
-        text-align: center;
+        margin-top: spacing("half");
     }
 
     // scss-lint:disable SelectorFormat
     .addthis_toolbox {
-        margin-top: spacing("double");
+        margin-top: spacing("half");
     }
     // scss-lint:enable SelectorFormat
 }
 
 .blog-title {
-    font-size: fontSize("large");
-    margin: 0 spacing("single") spacing("quarter");
+    font-size: fontSize("smaller");
+    margin-top: spacing("half");
 
     a {
         text-decoration: none;
@@ -47,12 +46,12 @@
 
 .blog-date,
 .blog-author {
-    color: stencilColor("color-textSecondary");
-    text-align: center;
+    color: stencilColor("color-textPimary");
+    margin-bottom: spacing("half");
 }
 
 .blog-author {
-    margin-bottom: spacing("single") + spacing("base");
+    margin-bottom: spacing("half");
 }
 
 .blog-post {
@@ -61,9 +60,11 @@
 }
 
 .blog-thumbnail {
-    margin: 0 auto (spacing("base") * 2);
+    margin: 0 auto (spacing("half"));
     position: relative;
-    max-width: get_width(stencilString('blog_size'));
+    width: 100%;
+    height: get_width(stencilString('blog_size'));
+    overflow: hidden;
 
     img {
         width: 100%;
@@ -73,28 +74,10 @@
 .blog-post-figure {
     display: block;
     margin: auto;
-    text-align: center;
-
-    @include breakpoint("medium") {
-        width: grid-calc(8, $total-columns);
-    }
 }
 
 .blog-post-body {
     display: block;
     margin: 0 auto;
-    text-align: center;
     width: 100%;
-
-    @include breakpoint("small") {
-        width: grid-calc(10, $total-columns);
-    }
-
-    @include breakpoint("medium") {
-        width: grid-calc(8, $total-columns);
-    }
-
-    @include breakpoint("large") {
-        width: grid-calc(6, $total-columns);
-    }
 }
