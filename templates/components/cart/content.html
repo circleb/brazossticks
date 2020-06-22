@@ -54,10 +54,18 @@
                     {{#if options}}
                         <dl class="definitionList">
                             {{#each options}}
-                                <dt class="definitionList-key">{{name}}:</dt>
+                                <dt class="definitionList-key">
+                                    {{#if name '==' 'view your personalization' }}
+                                        View Personalization
+                                    {{else}}
+                                        {{name}}
+                                    {{/if}}
+                                </dt>
                                 <dd class="definitionList-value">
                                     {{#if is_file}}
                                         <a href="/viewfile.php?attributeId={{../id}}&cartitem={{../../id}}">{{value}}</a>
+                                    {{else if name '==' 'view your personalization' }}
+                                        <a target="_blank" href="{{{ sanitize value}}}">Here</a>
                                     {{else}}
                                         {{{ sanitize value}}}
                                     {{/if}}

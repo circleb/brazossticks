@@ -74,6 +74,9 @@
                     {{#each options}}
                         <dt class="definitionList-key">{{name}}:</dt>
                         <dd class="definitionList-value">{{value}}</dd>
+                        {{#if name '==' 'view your personalization' }}
+                            Copy
+                        {{/if}}
                     {{/each}}
                 </dl>
                 {{/if}}
