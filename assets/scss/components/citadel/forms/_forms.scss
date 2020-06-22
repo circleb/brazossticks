@@ -281,6 +281,10 @@
 
     &:hover {
         background-color: stencilColor("input-bg-color-active");
+
+        .form-option-variant--title {
+            display: block;
+        }
     }
 
     .form-radio:checked + & {

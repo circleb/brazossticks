@@ -286,7 +286,7 @@
     counter-reset: option-counter;
     @include clearfix;
     margin-bottom: spacing("single");
-    padding-left: 4rem;
+    // padding-left: 4rem;
 
     .form-input[type="number"] {
         @include breakpoint("small") {
