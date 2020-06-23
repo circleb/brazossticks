@@ -81,7 +81,6 @@
                 <a href="https://www.trustpilot.com/review/brazos-walking-sticks.com" target="_blank" rel="noopener">Trustpilot</a>
             </div>
             <!-- End TrustBox widget -->
-            {{> components/common/share}}
             {{{region name="product_below_price"}}}
             {{product.detail_messages}}
             <dl class="productView-info">
@@ -209,6 +208,7 @@
             {{#if settings.show_wishlist}}
                 {{> components/common/wishlist-dropdown}}
             {{/if}}
+            {{> components/common/share}}
         </div>
     </section>
 

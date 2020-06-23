@@ -12,31 +12,18 @@
     margin-bottom: spacing("double");
 }
 
-.blog {
-    margin-bottom: spacing("single");
-    @include grid-column(12);
+.blog-thumbnail {
+    width: 20rem;
+    margin: 0 auto (spacing("half"));
+    position: relative;
 
-    @include breakpoint("small") {
-        @include grid-column(6);
+    img {
+        width: 100%;
     }
-
-    @include breakpoint("medium") {
-        @include grid-column(4);
-    }
-
-    .tags {
-        margin-top: spacing("half");
-    }
-
-    // scss-lint:disable SelectorFormat
-    .addthis_toolbox {
-        margin-top: spacing("half");
-    }
-    // scss-lint:enable SelectorFormat
 }
 
 .blog-title {
-    font-size: fontSize("smaller");
+    font-size: fontSize("small");
     margin-top: spacing("half");
 
     a {
@@ -59,18 +46,6 @@
     text-align: left;
 }
 
-.blog-thumbnail {
-    margin: 0 auto (spacing("half"));
-    position: relative;
-    width: 100%;
-    height: get_width(stencilString('blog_size'));
-    overflow: hidden;
-
-    img {
-        width: 100%;
-    }
-}
-
 .blog-post-figure {
     display: block;
     margin: auto;
@@ -80,4 +55,38 @@
     display: block;
     margin: 0 auto;
     width: 100%;
+}
+
+.pageblog {
+    .blog {
+        margin-bottom: spacing("single");
+        @include grid-column(12);
+
+        @include breakpoint("small") {
+            @include grid-column(6);
+        }
+
+        @include breakpoint("medium") {
+            @include grid-column(4);
+        }
+
+        .tags {
+            margin-top: spacing("half");
+        }
+
+        // scss-lint:disable SelectorFormat
+        .addthis_toolbox {
+            margin-top: spacing("half");
+        }
+        // scss-lint:enable SelectorFormat
+    }
+    .blog-title {
+        font-size: fontSize("smaller");
+    }
+
+    .blog-thumbnail {
+        width: 100%;
+        height: get_width(stencilString('blog_size'));
+        overflow: hidden;
+    }
 }

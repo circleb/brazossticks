@@ -37,6 +37,18 @@
                     </a>
                 </li>
             {{/each}}
+            <li class="socialLinks-item">
+                {{#if settings.facebook_like_button.enabled}}
+                    <iframe 
+                        class="facebook{{#if settings.facebook_like_button.verb '===' 'recommend'}}Recommend{{else}}Like{{/if}}Btn" 
+                        style="border:none; overflow:hidden; margin: 0; padding: 0; position:absolute" 
+                        src="https://www.facebook.com/plugins/like.php?href={{settings.facebook_like_button.href}}&amp;layout=button_count{{#if settings.facebook_like_button.verb '===' 'recommend'}}&amp;action=recommend{{/if}}&amp;colorscheme=light&amp;height=20" 
+                        scrolling="no" 
+                        frameborder="0" 
+                        allowTransparency="true">
+                    </iframe>
+                {{/if}}
+            </li>
         </ul>
         <script type="text/javascript"
                 defer src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e94ed470ee51e32"></script>
@@ -48,14 +60,4 @@
             });
         </script>
     </div>
-{{/if}}
-{{#if settings.facebook_like_button.enabled}}
-    <iframe 
-        class="facebook{{#if settings.facebook_like_button.verb '===' 'recommend'}}Recommend{{else}}Like{{/if}}Btn" 
-        style="border:none; overflow:hidden; margin: 0; padding: 0; position:absolute" 
-        src="https://www.facebook.com/plugins/like.php?href={{settings.facebook_like_button.href}}&amp;layout=button_count{{#if settings.facebook_like_button.verb '===' 'recommend'}}&amp;action=recommend{{/if}}&amp;colorscheme=light&amp;height=20" 
-        scrolling="no" 
-        frameborder="0" 
-        allowTransparency="true">
-    </iframe>
 {{/if}}

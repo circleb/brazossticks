@@ -22,6 +22,11 @@
     }
 }
 
+.modal--video {
+    padding: (spacing('double')+spacing('single')) 0;
+    background: transparent;
+}
+
 .modal-header {
     padding-left: $reveal-modal-paddingHorizontal;
     padding-right: remCalc($reveal-close-height) + $reveal-close-side;
