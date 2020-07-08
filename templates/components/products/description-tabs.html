@@ -17,25 +17,28 @@
     {{/all}}
 </ul>
 <div class="tabs-contents">
-    <div class="tab-content is-active" id="tab-description">
-        {{{product.description}}}
-    </div>
-     <div class="tab-content" id="tab-sizing">
-         Sizing info here...
-     </div>
-   {{#if product.warranty}}
-       <div class="tab-content" id="tab-warranty">
-           {{{product.warranty}}}
-       </div>
-   {{/if}}
-   {{#all product.custom_fields theme_settings.show_custom_fields_tabs}}
-      <div class="tab-content" id="tab-{{dashcase (lowercase (sanitize theme_settings.pdp-custom-fields-tab-label))}}">
-         <dl class="productView-info">
-            {{#each product.custom_fields}}
-               <dt class="productView-info-name">{{name}}:</dt>
-               <dd class="productView-info-value">{{{value}}}</dd>
-            {{/each}}
-         </dl>
-      </div>
-   {{/all}}
+  <div class="tab-content is-active" id="tab-description">
+    {{{product.description}}}
+  </div>
+  <div class="tab-content" id="tab-sizing">
+    <h2>Proper cane length</h2>
+    <img src="{{getImage image 'productgallery_size' (cdn theme_settings.sizing_canes)}}" />
+    <h2>Proper stick length</h2>
+    <img src="{{getImage image 'productgallery_size' (cdn theme_settings.sizing_sticks)}}" />
+  </div>
+  {{#if product.warranty}}
+  <div class="tab-content" id="tab-warranty">
+    {{{product.warranty}}}
+  </div>
+  {{/if}}
+  {{#all product.custom_fields theme_settings.show_custom_fields_tabs}}
+  <div class="tab-content" id="tab-{{dashcase (lowercase (sanitize theme_settings.pdp-custom-fields-tab-label))}}">
+    <dl class="productView-info">
+      {{#each product.custom_fields}}
+      <dt class="productView-info-name">{{name}}:</dt>
+      <dd class="productView-info-value">{{{value}}}</dd>
+      {{/each}}
+    </dl>
+  </div>
+  {{/all}}
 </div>
