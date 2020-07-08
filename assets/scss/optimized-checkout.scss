@@ -10,6 +10,12 @@
 //
 // =============================================================================
 
+// do some math
+$value_of_oc_logo_size : stencilString("optimizedCheckout-logo-size");
+$position_of_x : str-index($value_of_oc_logo_size, "x");
+$first_value : str-slice($value_of_oc_logo_size, 0, $position_of_x - 1);
+$second_value : str-slice($value_of_oc_logo_size, $position_of_x + 1);
+
 //
 // Header Section
 // Background, Logo Position
@@ -35,6 +41,11 @@
     @media (min-width: 801px) {
         text-align: stencilString("optimizedCheckout-logo-position");
     }
+}
+
+.checkoutHeader-logo {
+    height: $first_value +"px";
+    width: $second_value +"px";
 }
 
 //
@@ -331,6 +342,11 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
 // Background & Border & Text Color
 // Styles form checklists
 // -----------------------------------------------------------------------------
+
+.checkout-step--shipping .form-legend-container .optimizedCheckout-headingSecondary:after {
+    content: ' - We don\'t ship to PO Boxes';
+    font-style: italic;
+}
 
 .optimizedCheckout-form-checklist {
     background-color: stencilColor("optimizedCheckout-formChecklist-backgroundColor");
