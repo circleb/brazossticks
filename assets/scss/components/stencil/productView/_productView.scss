@@ -194,32 +194,6 @@
     }
 }
 
-.productView-reviewLink {
-    display: inline-block;
-    margin-left: spacing("half");
-    vertical-align: middle;
-
-    + .productView-reviewLink {
-        display: block;
-        margin-left: auto;
-
-        @include breakpoint("small") {
-            display: inline-block;
-            margin-left: spacing("half");
-        }
-    }
-
-    > a {
-        color: stencilColor("color-textPrimary");
-
-        // scss-lint:disable NestingDepth
-        &:hover {
-            color: stencilColor("color-textSecondary--hover");
-        }
-    }
-}
-
-
 // Details - Product Information
 // -----------------------------------------------------------------------------
 

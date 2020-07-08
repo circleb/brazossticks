@@ -2,6 +2,9 @@
     <li class="tab is-active">
         <a class="tab-title" href="#tab-description">{{lang 'products.description'}}</a>
     </li>
+      <li class="tab">
+          <a class="tab-title" href="#tab-sizing">Stick/Cane Sizing</a>
+      </li>
     {{#if product.warranty}}
         <li class="tab">
             <a class="tab-title" href="#tab-warranty">{{lang 'products.warranty'}}</a>
@@ -17,6 +20,9 @@
     <div class="tab-content is-active" id="tab-description">
         {{{product.description}}}
     </div>
+     <div class="tab-content" id="tab-sizing">
+         Sizing info here...
+     </div>
    {{#if product.warranty}}
        <div class="tab-content" id="tab-warranty">
            {{{product.warranty}}}

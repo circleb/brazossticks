@@ -1,13 +1,4 @@
 <div class="productView">
-    {{#each product.reviews.messages}}
-        {{#if error}}
-            {{>components/amp/common/alert-error error}}
-        {{/if}}
-        {{#if success}}
-            {{>components/amp/common/alert-success success}}
-        {{/if}}
-    {{/each}}
-
     {{> components/amp/products/product-view-details}}
     <section class="productView-images" data-image-gallery>
         <amp-carousel width="250"
@@ -56,9 +47,6 @@
         {{/if}}
         {{#if product.videos.list.length}}
             {{> components/amp/products/videos product.videos}}
-        {{/if}}
-        {{#if settings.show_product_reviews}}
-            {{> components/amp/products/reviews reviews=product.reviews product=product urls=urls}}
         {{/if}}
         {{#if settings.add_this.buttons}}
             <section expanded class="productAccordion">
