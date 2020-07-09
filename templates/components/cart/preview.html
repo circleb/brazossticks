@@ -103,14 +103,16 @@
                     </div>
 
                     {{#each options}}
-                        <dl class="productView-info">
-                            <dt class="productView-info-name">
-                                {{name}}
-                            </dt>
-                            <dd class="productView-info-value">
-                                {{{ sanitize value}}}
-                            </dd>
-                        </dl>
+                        {{#if name '!=' 'view your personalization' }}
+                            <dl class="productView-info">
+                                <dt class="productView-info-name">
+                                    {{name}}
+                                </dt>
+                                <dd class="productView-info-value">
+                                    {{{ sanitize value}}}
+                                </dd>
+                            </dl>
+                        {{/if}}
                     {{/each}}
                 </div>
             {{/with}}
