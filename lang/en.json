@@ -175,6 +175,7 @@
             "newest": "Newest Items",
             "alpha_asc": "A to Z",
             "alpha_desc": "Z to A",
+            "reviews": "By Review",
             "price_asc": "Price: Ascending",
             "price_desc": "Price: Descending"
         },
@@ -664,6 +665,11 @@
                 "expiration": "You must enter a valid expiration date.",
                 "name_on_card": "You must enter a name.",
                 "cvv": "You must enter a valid cvv."
+            },
+            "reviews": {
+                "rating": "The 'Rating' field cannot be blank.",
+                "title": "The 'Review Subject' field cannot be blank.",
+                "comment": "The 'Comments' field cannot be blank."
             }
         }
     },
@@ -682,6 +688,32 @@
         "file_option_set": "Currently: <a href=\"{url}\" target=\"_blank\">{name}</a>",
         "new": "New Products",
         "warranty": "Warranty Information",
+        "reviews": {
+            "hide": "Hide Reviews",
+            "new": "Write a Review",
+            "show": "Show Reviews",
+            "header": "{total, plural, =0{0 Reviews} one {# Review} other {# Reviews}}",
+            "link_to_review": "({total, plural, =0{No reviews yet} one {# review} other {# reviews}})",
+            "post_on_by": "Posted by { name } on { date }",
+            "rating_label": "Rating",
+            "select_rating": "Select Rating",
+            "anonymous_poster": "Unknown",
+            "rating": {
+                "1": "1 star (worst)",
+                "2": "2 stars",
+                "3": "3 stars (average)",
+                "4": "4 stars",
+                "5": "5 stars (best)"
+            },
+            "write_a_review": "Write a Review",
+            "form_write": {
+                "name": "Name",
+                "email": "Email",
+                "subject": "Review Subject",
+                "comments": "Comments",
+                "submit_value": "Submit Review"
+            }
+        },
         "videos": {
             "header": "Videos",
             "hide": "Hide Videos",

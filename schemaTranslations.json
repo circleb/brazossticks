@@ -1175,6 +1175,20 @@
     "uk": "Показуйте \"Покупок за ціною\" у фільтрах",
     "zh": "显示\"Shop by Price\"在筛选中"
   },
+  "i18n.ShowProductReviews": {
+    "default": "Show product reviews",
+    "fr": "Afficher les avis sur le produit",
+    "it": "Mostra recensioni prodotto",
+    "uk": "Показати відгуки про товари",
+    "zh": "显示产品评论"
+  },
+  "i18n.NumberOfProductReviews": {
+    "default": "Number of product reviews",
+    "fr": "Nombre d’avis de produits",
+    "it": "Numero di recensioni prodotto",
+    "uk": "Кількість відгуків про товар",
+    "zh": "产品评论数量"
+  },
   "i18n.WishlistDropdownBackground": {
     "default": "Wishlist dropdown background",
     "fr": "Arrière-plan de la liste déroulante de la liste de souhaits",
@@ -1461,6 +1475,20 @@
     "it": "Icona social media all'hover",
     "uk": "Наведення курсору на значок соціальних медіа",
     "zh": "社交媒体图标悬停"
+  },
+  "i18n.StarReviewIconFull": {
+    "default": "Star review icon (full)",
+    "fr": "Icone Etoile des avis (entier)",
+    "it": "Icona stellina recensione (ripiena)",
+    "uk": "Піктограма огляду зірки (повна)",
+    "zh": "星评图标（全）"
+  },
+  "i18n.StarReviewIconEmpty": {
+    "default": "Star review icon (empty)",
+    "fr": "Icone Etoile des avis (vide)",
+    "it": "Icona stellina recensione (vuota)",
+    "uk": "Піктограма огляду зірки (порожня)",
+    "zh": "星评图标（空）"
   },
   "i18n.IncreasedecreaseButtonIcon": {
     "default": "Increase/decrease button icon",

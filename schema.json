@@ -1363,6 +1363,70 @@
         "id": "shop_by_price_visibility"
       },
       {
+        "type": "checkbox",
+        "label": "i18n.ShowProductReviews",
+        "force_reload": true,
+        "id": "show_product_reviews_tabs"
+      },
+      {
+        "type": "select",
+        "label": "i18n.NumberOfProductReviews",
+        "id": "productpage_reviews_count",
+        "reference": "show_product_reviews_tabs",
+        "reference_default": false,
+        "force_reload": true,
+        "options": [
+          {
+            "value": 1,
+            "label": "1"
+          },
+          {
+            "value": 2,
+            "label": "2"
+          },
+          {
+            "value": 3,
+            "label": "3"
+          },
+          {
+            "value": 4,
+            "label": "4"
+          },
+          {
+            "value": 5,
+            "label": "5"
+          },
+          {
+            "value": 6,
+            "label": "6"
+          },
+          {
+            "value": 7,
+            "label": "7"
+          },
+          {
+            "value": 8,
+            "label": "8"
+          },
+          {
+            "value": 9,
+            "label": "9"
+          },
+          {
+            "value": 10,
+            "label": "10"
+          },
+          {
+            "value": 11,
+            "label": "11"
+          },
+          {
+            "value": 12,
+            "label": "12"
+          }
+        ]
+      },
+      {
         "type": "color",
         "label": "i18n.WishlistDropdownBackground",
         "id": "dropdown--wishList-backgroundColor"
