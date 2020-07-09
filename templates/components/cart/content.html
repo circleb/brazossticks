@@ -72,8 +72,10 @@
                                 </dd>
                             {{/each}}
                         </dl>
+                        {{#if name '!=' 'Legacy Staff'}}
+                           <a href="#" data-item-edit="{{id}}">{{lang 'cart.checkout.change'}}</a>
+                        {{/if}}
 
-                        <a href="#" data-item-edit="{{id}}">{{lang 'cart.checkout.change'}}</a>
                     {{/if}}
 
                     {{#if type '==' 'GiftCertificate'}}
