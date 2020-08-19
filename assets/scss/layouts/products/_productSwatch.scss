@@ -24,12 +24,14 @@ $second_value : str-slice($value_of_swatch_size, $position_of_x + 1);
 
 .form-option-variant--title {
     font-size: 12px;
+    line-height: 1;
+    padding-top: 5px;
     display: block;
     width: $first_value +"px";
     text-align: center;
-    white-space: nowrap;
+    height: 32px;
 
-    @include breakpoint('medium') {
+    @include breakpoint('large') {
         font-size: 14px;
         position: absolute;
         padding: 20% 5px;
@@ -40,6 +42,7 @@ $second_value : str-slice($value_of_swatch_size, $position_of_x + 1);
         display: none;
         color: #ffffff;
         background-color: rgba(0,0,0,.7);
+        height: auto;
     }
 }
 
@@ -56,4 +59,10 @@ $second_value : str-slice($value_of_swatch_size, $position_of_x + 1);
 
 .form-option-rectangle {
     border: 1px solid stencilColor("form-label-font-color");
+}
+
+.form-option-swatch {
+    display: block;
+    float: left;
+    width: 82px;
 }
