@@ -178,6 +178,7 @@
 
     .dropdown-menu {
         max-width: remCalc(320px);
+        background-color: white;
 
         // scss-lint:disable NestingDepth
         &.is-open {
@@ -202,6 +203,7 @@
 
             &:after {
                 right: spacing("half") - remCalc(3px); // 8
+                border-color: transparent transparent white transparent;
                 @include breakpoint("medium") {
                     right: spacing("half") + remCalc(2px); // 8
                 }

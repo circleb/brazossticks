@@ -578,8 +578,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     padding: 0;
     text-align: center;
     position: relative;
+    overflow: hidden;
 
     img {
+        max-height: 100%;
         @include lazy-loaded-img;
     }
 
@@ -607,7 +609,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .previewCartItem-brand,
 .previewCartItem-price {
-    color: $small-font-color;
+    color: $body-font-color;
     display: inline-block;
     font-size: fontSize("smallest");
 }
