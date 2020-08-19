@@ -26,6 +26,9 @@ export default class Product extends PageManager {
         videoGallery();
 
         this.bulkPricingHandler();
+
+        $('[data-name="Size"] input:first').trigger( "click" ).change();
+        $('[data-name="Wood"] input:first').trigger( "click" ).change();
     }
 
     bulkPricingHandler() {
