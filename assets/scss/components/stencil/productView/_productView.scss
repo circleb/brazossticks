@@ -15,7 +15,9 @@
 // -----------------------------------------------------------------------------
 
 .productView-images {
-    margin-bottom: spacing("double");
+    @include breakpoint("medium") {
+        margin-bottom: spacing("double");
+    }
 }
 
 .productView-image {
@@ -123,6 +125,18 @@
     @include breakpoint("medium") {
         margin-bottom: 0;
     }
+
+    .productOptions-title {
+        margin-top: none;
+        font-size: fontSize("large");
+        text-transform: uppercase;
+        font-weight: 900;
+        display: none;
+
+        @include breakpoint("medium") {
+            display: block;
+        }
+    }
 }
 
 
@@ -142,14 +156,6 @@
 .productView-title {
     font-size: fontSize("large");
     margin: -(spacing("half")) 0 spacing("quarter");
-
-    @include breakpoint("medium") {
-        margin-top: spacing("single");
-    }
-
-    @include breakpoint("large") {
-        font-size: fontSize("largest");
-    }
 }
 
 .productView-brand {
@@ -278,9 +284,12 @@
 
     .form-field {
         font-size: 0; // 2
-        margin-bottom: 2rem;
+        margin-bottom: 0;
         position: relative;
 
+        @include breakpoint("small") {
+            margin-bottom: 2rem;
+        }
         // scss-lint:disable SelectorDepth, NestingDepth
         > .form-checkbox + .form-label
         {

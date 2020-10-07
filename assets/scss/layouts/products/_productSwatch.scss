@@ -66,3 +66,19 @@ $second_value : str-slice($value_of_swatch_size, $position_of_x + 1);
     float: left;
     width: 82px;
 }
+
+.radio-option-help {
+    font-size: 1rem;
+    min-width: 2.1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #666666;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 2px;
+    border: 1px solid #666666;
+    border-radius: 50%;
+}

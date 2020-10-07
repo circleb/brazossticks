@@ -22,4 +22,7 @@
             <span class="form-option-variant">{{this.label}}</span>
         </label>
     {{/each}}
+    {{#if this.display_name '==' 'Size' }}
+        <a href="#" data-reveal-id="stick-sizing-modal" class="radio-option-help">?</a>
+    {{/if}}
 </div>
