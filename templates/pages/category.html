@@ -25,28 +25,34 @@ category:
         class="category-header-image"
     }}
 {{/if}}
-{{#unless theme_settings.hide_category_page_heading }}
-    <h1 class="page-heading">{{category.name}}</h1>
-    {{{region name="category_below_header"}}}
-{{/unless}}
 <div class="page">
     {{#if category.faceted_search_enabled}}
         <aside class="page-sidebar" id="faceted-search-container">
+            <h5 class="sidebarBlock-heading">Sort by</h5>
+            {{> components/products/filter sort=pagination.category.sort}}
             {{> components/category/sidebar}}
         </aside>
     {{else if category.subcategories}}
         <aside class="page-sidebar" id="faceted-search-container">
+            <h5 class="sidebarBlock-heading">Sort by</h5>
+            {{> components/products/filter sort=pagination.category.sort}}
             {{> components/category/sidebar}}
         </aside>
     {{else if category.shop_by_price}}
         {{#if theme_settings.shop_by_price_visibility}}
              <aside class="page-sidebar" id="faceted-search-container">
+                <h5 class="sidebarBlock-heading">Sort by</h5>
+                {{> components/products/filter sort=pagination.category.sort}}
                 {{> components/category/sidebar}}
             </aside>
         {{/if}}
     {{/if}}
 
     <main class="page-content" id="product-listing-container">
+        {{#unless theme_settings.hide_category_page_heading }}
+            <h1 class="page-heading">{{category.name}}</h1>
+            {{{region name="category_below_header"}}}
+        {{/unless}}
         {{#if category.products}}
             {{> components/category/product-listing}}
         {{else}}
