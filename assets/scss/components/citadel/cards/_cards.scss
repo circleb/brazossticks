@@ -131,14 +131,18 @@
         @include breakpoint("small") {
             padding: spacing("single");
         }
+
+        .card-text {
+            color: stencilColor("card--alternate-color");
+        }
     }
 
     &:hover {
-        border-color: stencilColor("color-primary");
+        border-color: $header-bg;
 
         // scss-lint:disable SelectorDepth, NestingDepth
         .card-body {
-            background-color: stencilColor("color-primary");
+            background-color: $header-bg;
 
             .card-text {
                 color: stencilColor("card--alternate-color--hover");

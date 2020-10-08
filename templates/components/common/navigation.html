@@ -27,7 +27,9 @@
             <li class="navUser-item navUser-item--divider">|</li>
         {{/if}}
         <li class="navUser-item">
-            <a class="navUser-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">{{lang 'common.search'}}</a>
+            <a class="navUser-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">
+                <svg class="footer-payment-icon"><use xlink:href="#icon-search"></use></svg>
+            </a>
         </li>
         {{#if settings.gift_certificates_enabled}}
             <li class="navUser-item">

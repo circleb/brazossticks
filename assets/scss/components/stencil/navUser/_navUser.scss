@@ -261,6 +261,23 @@
 // -----------------------------------------------------------------------------
 
 .navUser-action--quickSearch {
+    padding-top: 0.5rem ;
+    padding-bottom: 0.5rem ;
+    line-height: 0;
+    background: stencilColor("color-secondaryDark");
+
+    svg {
+        width: 2rem;
+        height: 2.64rem;
+    }
+
+    &:hover {
+        color: stencilColor("color-primaryDark");
+        svg {
+            fill: stencilColor("color-primaryDark");
+            stroke: stencilColor("color-primaryDark");
+        }
+    }
 
     &.is-open {
         position: relative;

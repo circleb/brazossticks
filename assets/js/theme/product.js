@@ -43,29 +43,32 @@ export default class Product extends PageManager {
             }
         }
 
-        // Only show the customily canvas if the "Add Engraving" option is set to "Yes"
-        window.addEventListener('load', function() {
-            var engravingInputYes = document.querySelectorAll('[data-name="Add Engraving"] input')[0];
-            var engravingInputNo = document.querySelectorAll('[data-name="Add Engraving"] input')[1];
+        // Only show the customily canvas if the "Add Engraving" option is present and set to "Yes"
+        if ($('[data-name="Add Engraving"]').length) {
+            window.addEventListener('load', function() {
+                var engravingInputYes = document.querySelectorAll('[data-name="Add Engraving"] input')[0];
+                var engravingInputNo = document.querySelectorAll('[data-name="Add Engraving"] input')[1];
 
-            var displayCustomilyFunction = window.displayCustomilyCanvas;
-            function displayCustomilyCanvasCustom() {
-                if(!engravingInputYes.checked) return;
-                displayCustomilyFunction();
-            }
+                var displayCustomilyFunction = window.displayCustomilyCanvas;
+                function displayCustomilyCanvasCustom() {
+                    if(!engravingInputYes.checked) return;
+                    displayCustomilyFunction();
+                }
 
-            window.displayCustomilyCanvas = displayCustomilyCanvasCustom;
+                window.displayCustomilyCanvas = displayCustomilyCanvasCustom;
 
-            engravingInputYes.addEventListener('click', function() {
-                $('.productView-thumbnails').hide();
-                window.displayCustomilyCanvas();
+                engravingInputYes.addEventListener('click', function() {
+                    $('.productView-thumbnails').hide();
+                    $('[data-name="Choose font"] input:first').trigger( "click" ).change();
+                    window.displayCustomilyCanvas();
+                });
+
+                engravingInputNo.addEventListener('click', function() {
+                    $('.productView-thumbnails').show();
+                    window.hideCustomilyCanvas();
+                });
             });
-
-            engravingInputNo.addEventListener('click', function() {
-                $('.productView-thumbnails').show();
-                window.hideCustomilyCanvas();
-            });
-        })
+        }
     }
 
     bulkPricingHandler() {
