@@ -19,7 +19,11 @@
             {{/if}}
             {{#if ../required}}required{{/if}}>
         <label class="form-option form-option-rectangle" for="attribute_rectangle__{{../id}}_{{id}}" data-product-attribute-value="{{id}}">
+            {{#if this.label '==' 'Yes 512-3000-1009' }}
+            <span class="form-option-variant">Yes</span>
+            {{else}}
             <span class="form-option-variant">{{this.label}}</span>
+            {{/if}}
         </label>
     {{/each}}
     {{#if this.display_name '==' 'Size' }}
