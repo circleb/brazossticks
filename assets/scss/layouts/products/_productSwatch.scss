@@ -31,19 +31,20 @@ $second_value : str-slice($value_of_swatch_size, $position_of_x + 1);
     text-align: center;
     height: 32px;
 
-    @include breakpoint('large') {
-        font-size: 14px;
-        position: absolute;
-        padding: 20% 5px;
-        top: 1px;
-        bottom: 1px;
-        left: 1px;
-        right: 2px;
-        display: none;
-        color: #ffffff;
-        background-color: rgba(0,0,0,.7);
-        height: auto;
-    }
+    // disabled the desktop version of the swatch titles so they show all of the time and not on hover only
+    // @include breakpoint('large') {
+    //     font-size: 14px;
+    //     position: absolute;
+    //     padding: 20% 5px;
+    //     top: 1px;
+    //     bottom: 1px;
+    //     left: 1px;
+    //     right: 2px;
+    //     display: none;
+    //     color: #ffffff;
+    //     background-color: rgba(0,0,0,.7);
+    //     height: auto;
+    // }
 }
 
 .form-option-image {
@@ -72,13 +73,17 @@ $second_value : str-slice($value_of_swatch_size, $position_of_x + 1);
     min-width: 2.1rem;
     text-align: center;
     text-decoration: none;
-    color: #666666;
+    color: #fff;
+    background: stencilColor("color-secondaryDark");
     cursor: pointer;
     display: inline-block;
     font-weight: 800;
     margin-bottom: 0.5rem;
     margin-right: 0.5rem;
-    padding: 2px;
+    padding: 2px 0.75rem;
     border: 1px solid #666666;
-    border-radius: 50%;
+    &:hover {
+        background-color: #444444;
+        color: #ffffff;
+    }
 }

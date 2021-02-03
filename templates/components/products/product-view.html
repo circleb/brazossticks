@@ -25,8 +25,6 @@
             <dl class="productView-info">
                 <dt class="productView-info-name sku-label"{{#unless product.sku}} style="display: none;"{{/unless}}>{{lang 'products.sku'}}</dt>
                 <dd class="productView-info-value" data-product-sku{{#if schema}} itemprop="sku"{{/if}}>{{product.sku}}</dd>
-                <dt class="productView-info-name upc-label"{{#unless product.upc}} style="display: none;"{{/unless}}>{{lang 'products.upc'}}</dt>
-                <dd class="productView-info-value" data-product-upc>{{product.upc}}</dd>
                 {{#if schema}}
                     {{#if product.mpn}}<meta itemprop="mpn" content="{{product.mpn}}" />{{/if}}
                     {{#if product.gtin}}<meta itemprop="gtin" content="{{product.gtin}}" />{{/if}}
@@ -199,13 +197,8 @@
                 </div>
                 {{#if product.can_purchase}}
                     {{> components/products/add-to-cart}}
-                {{/if}}
-                {{#if product.out_of_stock}}
-                    {{#if product.out_of_stock_message}}
-                        {{> components/common/alert-error product.out_of_stock_message}}
-                    {{else}}
-                        {{> components/common/alert-error (lang 'products.sold_out')}}
-                    {{/if}}
+                {{else}}
+                    <a class="button" disabled>Out of Stock</a>
                 {{/if}}
             </form>
             {{#if settings.show_wishlist}}
@@ -231,6 +224,8 @@
 
 {{> components/common/stick-sizing-modal}}
 {{> components/common/cane-sizing-modal}}
+{{> components/common/stick-sizing-video-modal}}
+{{> components/common/cane-sizing-video-modal}}
 
 <div id="previewModal" class="modal modal--large" data-reveal>
     <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">

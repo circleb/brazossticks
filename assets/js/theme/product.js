@@ -30,6 +30,7 @@ export default class Product extends PageManager {
         // Auto select the first wood and size option
         $('[data-name="Size"] input:first').trigger( "click" ).change();
         $('[data-name="Wood"] input:first').trigger( "click" ).change();
+        $('[data-name="Colors"] input:first').trigger( "click" ).change();
 
         // Show the help link only if it's a stick or cane and display the right modal respectively
         if ($('.radio-option-help').length) {

@@ -14,7 +14,44 @@
             // Change document class from no-js to js so we can detect this in css
             document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
         </script>
-
+        <script>
+            var storeHash = '{{settings.store_hash}}';
+            var prodId = {{product.id}};
+            
+            if(storeHash && prodId) {
+                var endpoint = 'https://us-central1-customily-bigcommerce.cloudfunctions.net/api';
+                
+                function getjx(url) {
+                    return new Promise(function (res, rej) {
+                      var xhttp = new XMLHttpRequest();
+                      xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                          res(this.responseText);
+                        } else if (this.readyState == 4 && this.status != 200) {
+                          rej('network error');
+                        }
+                      };
+                      xhttp.open("GET", url, true);
+                      xhttp.send();
+                    });
+                }
+        
+                getjx(`${endpoint}/getStoreProductfromId/${storeHash}/${prodId}`)
+                  .then(function (response) {
+                    try {
+                      var product = JSON.parse(response);
+                      if(product.initialProductId) {
+                          // Here we redirect.
+                          window.top.location.href = '{{product.url}}';
+                      }
+                    } catch (err) {
+                      throw new Error(err);
+                    }
+                
+                })
+                
+            }
+        </script>
         {{{ head.scripts }}}
 
         {{ inject 'themeSettings' theme_settings }}

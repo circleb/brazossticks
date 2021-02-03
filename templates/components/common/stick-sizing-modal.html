@@ -2,10 +2,11 @@
     <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
         <span aria-hidden="true">&#215;</span>
     </a>
-    <div class="modal-content">
-      <div class="videoWrapper videoWrapper--square">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/8RJI4iNNTik?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+    <div class="modal-content" style="text-align: center">
+   		<img src="{{getImage image 'productgallery_size' (cdn theme_settings.stick_sizing)}}" />
+   		<br/>
+   		<br/>
+        <a class="button" data-reveal-id="stick-sizing-video-modal">Video Guide</a>
     </div>
     <div class="loadingOverlay"></div>
 </div>
