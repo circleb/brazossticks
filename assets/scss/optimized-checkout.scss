@@ -348,6 +348,16 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
     font-style: italic;
 }
 
+.checkout-step--payment .form-fieldset.checkout-terms:after {
+    content: 'Please check your order carefully. In order to insure quick delivery and handling, we cannot make changes to the order once it is submitted. This means, no coupons, items, or accessories can be added after Submitting this order. Thank you for your understanding.';
+    display: block;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    background-color: #f3f3f3;
+    border: solid 1px #bbb;
+    border-radius: 5px;
+}
+
 .optimizedCheckout-form-checklist {
     background-color: stencilColor("optimizedCheckout-formChecklist-backgroundColor");
     border-color: stencilColor("optimizedCheckout-formChecklist-borderColor");
